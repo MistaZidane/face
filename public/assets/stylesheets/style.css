@@ -1,0 +1,42 @@
+/**   
+* Description of the file: The css file for the sdk face auth interface login and register pages. Add link pointers with {@link linkname}   
+* @author Mambo Joy Cho  
+* @date Date created  23/09/2020 
+* Contributors : contributor name,
+**/
+
+* {
+    margin: 0px;
+  }
+  
+  .app_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #cecece;
+  }
+  
+  .app_body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    background-color: #fefefefe;
+  }
+  button{
+    width: 100%;
+    height: 2.5em;
+    font-size: 1em;
+    padding: 10px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+button >  a{
+      text-decoration: none;
+      color: #000000;
+  }

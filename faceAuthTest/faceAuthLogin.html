@@ -1,0 +1,39 @@
+<!-- /**   
+* Description of the file: The html file for the sdk face auth interface login. Add link pointers with {@link linkname}   
+* @author Mambo Joy Cho  
+* @date Date created  23/09/2020 
+* Contributors : contributor name,
+**/ -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sdk face core app</title>
+    <!-- css for login and register page -->
+    <link rel="stylesheet" href="./assets/stylesheets/main.css" />
+    <!-- js script for accessing web camera -->
+    <script src="./assets/scripts/faceAuth.js" defer></script>
+  </head>
+  <body>
+    <div class="app__container">
+      <div class="app_body">
+        <!-- video camera section -->
+        <div class="app_header box">
+          <div class="video_container circle">
+            <video playsinline autoplay id="video" class="circle"></video>
+          </div>
+          <div class="app_picture">
+            <canvas id="canvas"></canvas>
+          </div>
+        </div>
+        <!-- login button and footer message section -->
+        <div class="app__footer box">
+          <button type="button" class="app__footerButton">login</button>
+          <p>Power by SevenGPS</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

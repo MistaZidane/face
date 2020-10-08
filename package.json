@@ -1,0 +1,32 @@
+{
+  "name": "express-handlebars-starter-app",
+  "version": "0.2.6",
+  "description": "Node, Express, Handlebars starter app, based on Getting Started with Node on Heroku.",
+  "engines": {
+    "node": "6.11.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "axios": "^0.20.0",
+    "body-parser": "^1.19.0",
+    "express": "4.15.2",
+    "express-handlebars": "3.0.0",
+    "form-data": "^3.0.0",
+    "formidable": "^1.2.2",
+    "mongoose": "^5.10.8",
+    "request": "2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/heroku/node-js-getting-started"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
+}

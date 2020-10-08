@@ -1,0 +1,100 @@
+/**   
+* Description of the file: The css file for the sdk face auth interface login and register pages. Add link pointers with {@link linkname}   
+* @author Mambo Joy Cho  
+* @date Date created  23/09/2020 
+* Contributors : contributor name,
+**/
+
+* {
+    margin: 0px;
+  }
+  
+  /* styles for the container of the pages */
+  .app__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: #cecece;
+  }
+  /* style for the body of the pages, the card inteface */
+  .app_body {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 500px;
+    padding: 10px;
+    background-color: #fefefefe;
+  }
+   /* Styles containing the camera section for both pages and the input field for the register page */
+  .box {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .app_header {
+    display: flex;
+    flex-direction: column;
+    flex: 0.7;
+    justify-content: space-between;
+  }
+  .app_picture {
+    display: none;
+  }
+  .video_container {
+    width: 75%;
+    height: 75%;
+    background-color: hsl(122, 6%, 16%);
+   
+  }
+  .circle{
+     border-radius: 100%;
+  }
+  .video_container > video{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  /* Styles for the button and footer text of the pages */
+   
+  .app__footer {
+    flex: 0.3;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .app__footer > input{
+    width: 50%;
+    height: 2.5em;
+  }
+  .app__footer > button {
+    width: 50%;
+    height: 2.5em;
+    font-size: 1em;
+    padding: 10px;
+    font-weight: normal;
+    cursor: pointer;
+  }
+  
+  .app__footer > p {
+    font-weight: 500;
+    font-size: 1.1em;
+    color: hsl(222, 16%, 6%);
+  }
+
+  /* media query responsiveness of video container for particular screen sizes */
+  @media screen and (min-width : 490px){
+    .video_container{
+      width: 50%;
+    }
+  }
+  @media screen and (min-width: 440px) and (max-width : 489px){
+    .video_container{
+      width: 60%;
+    }
+  }
