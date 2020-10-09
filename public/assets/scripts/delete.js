@@ -16,7 +16,7 @@ button.onclick = function() {
 canvas.getContext('2d').drawImage(video, 0, 0, width, height);
   console.log(`picture taken`);
  // console.log(canvas.toDataURL("image/jpeg"))
- verifier(canvas.toDataURL("image/jpeg"));
+ register(canvas.toDataURL("image/jpeg"));
 };
 
 function b64toBlob(dataURI) {
@@ -28,9 +28,7 @@ function b64toBlob(dataURI) {
   }
   return new Blob([ab], { type: "image/jpeg" });
 }
-function verifier(face) {
-  let login_label = document.getElementById("login_label");
-  let loader = document.getElementById("loader");
+function register(face) {
   let button = document.querySelector("button");
   // loader.style.display = "block";
   // login_label.style.display = "none";
@@ -41,21 +39,20 @@ function verifier(face) {
   bodyFormData.append("image", blobUrl);
   axios({
     method: "post",
-    url: `http://localhost:5000/api/verify`,
+    url: `http://localhost:5000/api/remove`,
     data: bodyFormData,
     headers: {
       "Content-Type": "multipart/form-data",
-      
     },
   })
     .then(function ({data, headers }) {
       // console.log(response);
       //handle success
       console.log(data, headers);
- 
-      let callback = headers.callback;
+      let callback = headers.deletecallback;
       let status = btoa(data.status);
       let message = btoa(data.message);
+      
    window.location.replace(`https://${callback}?status=${status}&message=${message}`);
       console.log(`https://${callback}`);
     })

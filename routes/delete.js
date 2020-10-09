@@ -9,10 +9,11 @@
   const router = express.Router();
   const jsonSaver = require('../utils/json');
 
-  router.get('/:callback/:name', (req, res) => {
+  router.get('/:callback', (req, res) => {
       console.log(req.params);
-      jsonSaver.addRegister({callback:req.params.callback});
-      res.render('pages/register',{name:req.params.name});
+      
+      jsonSaver.addDelete({callback:req.params.callback});
+      res.render('pages/delete');
   });
   
   module.exports = router;

@@ -5,11 +5,9 @@ const fs = require('fs');
 const path = require('path');
 var FormData = require('form-data');
 const formidable = require('formidable');
-
-const verifyModel = require('../models/verifyModel');
 // request the data from third party API
 
-module.exports.Verify = (req, res) => {
+module.exports.Register = (req, res) => {
     const form = formidable({ multiples: true });
 
     form.parse(req, (err, fields, files) => {
@@ -22,42 +20,24 @@ module.exports.Verify = (req, res) => {
                 // console.log(data)
             });
             file.on('end', function () {
-                let saver = new verifyModel({name:'Mista Zidane', transctionId:"13435465rdfgreher"});
-                saver.save((err,doc)=>{
-                    if(err){}
-                    else{
-                       // console.log(doc)
-                    }
-                })
                 const form_data = new FormData();
                 form_data.append("image", file);
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-     
-                // axios({
-                //     url: `https://immense-shore-43563.herokuapp.com/api/verify`,
-                //     method: "post",
-                //     data: form_data,
-                //     headers: {
-                //         "Content-Type": "multipart/form-data",
-                //         "name":"Mista"
-                //     },
-                // }).then(function (response ) {
-                //         res.send(response);
-                //        console.log(response)
-                //     }).catch(function (err ) {
-                //         //handle error
-                //         res.send(err);
-                //         console.log(err);
-                //     });
+              //  console.log(form_data)
+                //  res.send("ok");
+                axios.post( `https://immense-shore-43563.herokuapp.com/api/verify`,{
+                    //data: form_data,
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                        "name": "Mista"
+                    },
+                }).then(function (data ) {
+                        res.send(data);
+                       console.log(data)
+                    }).catch(function (err ) {
+                        //handle error
+                        res.send(err);
+                        console.log("err");
+                    });
 
 
                 // axios.post("https://immense-shore-43563.herokuapp.com/api/verify", {

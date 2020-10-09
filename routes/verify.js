@@ -8,15 +8,14 @@
 const express = require('express');
 const router = express.Router();
 
-const verifyControler = require('../controllers/Verify');
+const jsonSaver = require('../utils/json');
 
-router.get('/:callback', (req, res) => {
-    console.log(req.params);
+router.get('/:callback', (req, res,next) => {
+    jsonSaver.add({name:'dfsd',callback:req.params.callback})
     res.render('pages/verify');
+  
 });
-router.post('/',(req,res)=>{
- verifyControler.Verify(req,res);
- console.log("egrht");
-})
+
+
 
 module.exports = router;
